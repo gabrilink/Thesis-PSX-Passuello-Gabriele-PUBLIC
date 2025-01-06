@@ -1,0 +1,119 @@
+Define GameName "Game"
+Define GameDir .
+
+Disc CDROMXA_PSX
+	CatalogNumber 0000000000000
+
+	LeadIn XA
+		Empty 1000
+		PostGap 150
+	EndTrack
+
+	Track XA
+		Pause 150
+		Volume ISO9660
+			SystemArea .\LCNSFILE\LICENSEE.DAT
+
+			PrimaryVolume
+				SystemIdentifier "PLAYSTATION"
+				VolumeIdentifier [GameName]
+				VolumeSetIdentifier [GameName]
+				PublisherIdentifier "SCEE"
+				DataPreparerIdentifier "SONY"
+				ApplicationIdentifier "PLAYSTATION"
+				LPath
+				OptionalLpath
+				MPath
+				OptionalMpath
+
+				Hierarchy
+					XAFileAttributes Form1 Audio
+					XAVideoAttributes ApplicationSpecific
+					XAAudioAttributes ADPCM_C Stereo
+
+					File SYSTEM.CNF
+						XAFileAttributes Form1 Data
+						Source [GameDir]\SYSTEM.TXT
+					EndFile
+
+					File MAIN.EXE
+						XAFileAttributes Form1 Data
+						Source [GameDir]\MAIN.EXE
+					EndFile
+
+					File FONT.TIM
+						XAFileAttributes Form1 Data
+						Source [GameDir]\FONT.TIM
+					EndFile
+
+					File UNIUD.TIM
+						XAFileAttributes Form1 Data
+						Source [GameDir]\UNIUD.TIM
+					EndFile
+
+					File MODEL.BIN
+						XAFileAttributes Form1 Data
+						Source [GameDir]\MODEL.BIN
+					EndFile
+
+					File CUBE1128.TIM
+						XAFileAttributes Form1 Data
+						Source [GameDir]\CUBE1128.TIM
+					EndFile
+
+					File BRICKS.TIM
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BRICKS.TIM
+					EndFile
+
+					File CRAUNC.STR
+						XASource [GameDir]\CRAUNC.STR
+					EndFile
+
+					File SPYRO.STR
+						XASource [GameDir]\SPYRO.STR
+					EndFile
+
+					File BOXER00.TMD
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BOXER00.TMD
+					EndFile
+
+					File BOXER01.TMD
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BOXER00.TMD
+					EndFile
+
+					File BOXER02.TMD
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BOXER00.TMD
+					EndFile
+
+					File BOXER03.TMD
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BOXER00.TMD
+					EndFile
+
+					File BOXER04.TMD
+						XAFileAttributes Form1 Data
+						Source [GameDir]\BOXER00.TMD
+					EndFile
+
+				EndHierarchy
+			EndPrimaryVolume
+		EndVolume
+		Empty 300
+		PostGap 150
+	EndTrack
+
+    Track AUDIO
+        Pause 150
+        Source [GameDir]\TRACK01.WAV
+        Empty 300
+    EndTrack
+
+    LeadOut AUDIO
+		Empty 150
+	EndTrack
+
+EndDisc
